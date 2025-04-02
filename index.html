@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дашборд</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Боковая панель -->
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="/images/avatar.jpg" alt="Аватар" class="avatar">
+                <h3 class="full-text">ФИО наставника</h3>
+                <p class="full-text">username</p>
+            </div>
+            <nav role="navigation">
+                <ul>
+                    <li>
+                        <img src="/images/profile-icon.svg" alt="Профиль">
+                        <a href="#" class="full-text selected">Профиль</a>
+                    </li>
+                    <li>
+                        <img src="/images/month-icon.svg" alt="Месяц">
+                        <a href="#" class="full-text">Месяц</a>
+                    </li>
+                    <li>
+                        <img src="/images/check-icon.svg" alt="Проверки">
+                        <a href="#" class="full-text">Проверки</a>
+                    </li>
+                    <li>
+                        <img src="/images/clock-icon.svg" alt="Часы">
+                        <a href="#" class="full-text">Часы</a>
+                    </li>
+                    <li>
+                        <img src="/images/quality-icon.svg" alt="Качество проверок">
+                        <a href="#" class="full-text">Качество проверок</a>
+                    </li>
+                    <li>
+                        <img src="/images/back-icon.svg" alt="На платформу">
+                        <a href="#" class="full-text">На&nbsp;платформу</a>
+                    </li>
+                </ul>
+            </nav>
+            <p class="chat-id full-text">ChatID: <br><span class="id">1723456781</span> </p>
+        
+            <!-- Кнопка сворачивания -->
+            <button class="toggle-btn" onclick="toggleSidebar()">
+                <img src="/images/arrow-left.svg" alt="Свернуть" class="arrow-icon">
+            </button>
+        </aside>
+
+        <!-- Основное содержимое -->
+        <main class="main-content">
+            <div class="content">
+                <div class="header">
+                    <label for="period">Период</label>
+                    <div class="dropdown">
+                        <select id="period">
+                            <option>год</option>
+                            <option>месяц</option>
+                        </select>
+                        <img src="images/Chevron down.svg" alt="Стрелка вниз" class="custom-arrow">
+                    </div>
+                </div>
+                
+                <div class="stats">
+                    <div class="card total">
+                        <img src="images/total.png" alt="Деньги" class="card-icon">
+                        <div class="card-content">
+                            <p class="card-title">Итого за <span class="highlight">год</span></p>
+                            <div class="card-amount">
+                                <div class="amount-numbers">
+                                <span class="amount">324&nbsp;370,50</span><span class="currency-total">₽</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card green">
+                        
+                        <p>Средняя оценка  проверок <br> СН/ГН</p>
+                        <h2>10,0</h2>
+                    </div>
+                    <div class="card gray">
+                        
+                        <p>Итоговая оценка <br>(из&nbsp;5&nbsp;баллов)</p>
+                        <h2>5,0</h2>
+                    </div>
+                    <div class="card bonus">
+                        <img src="images/bonus.png" alt="Бонус" class="card-icon-bonus">
+                        <div class="card-content">
+                            <p class="card-title">Бонус</p>
+                            <div class="card-amount-b">
+                                <div class="bonus-numbers">
+                                <span class="amount-b">34&nbsp;370,50</span><span class="currency-bonus">₽</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- График и новые карточки под ним -->
+            <div class="chart-container">
+                <div class="chart">
+                    <img src="/images/chart.png" alt="График">
+                </div>
+                
+                <div class="info-cards">
+                    <div class="info-cards-ordinary">
+                        <div class="info-card wide hours"> <!-- 350px -->
+                            <img src="images/clock.png" alt="Часы">
+                            <div class="card-text">
+                                <p>Рабочих часов</p>
+                                <h2>1 564</h2>
+                            </div>
+                        </div>
+                        <div class="info-card small days"> <!-- 188px -->
+                            <div class="card-text">
+                                <p>Кол-во дней</p>
+                                <h2>312</h2>
+                            </div>
+                        </div>
+                        <div class="info-card wide hw highlight"> <!-- 350px -->
+                            <img src="images/task.png" alt="ДЗ">
+                            <div class="card-text">
+                                <p>ДЗ к оплате</p>
+                                <h2>2570</h2>
+                            </div>
+                        </div>
+                        <div class="info-card small strikes"> <!-- 188px -->
+                            <img src="images/ghost.png" alt="Страйки">
+                            <div class="card-text">
+                                <p>Страйки</p>
+                                <h2>0</h2>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="info-cards-extra">
+                        <div class="info-card medium"> <!-- 240px -->
+                            <div class="card-text">
+                                <p>Суммарно на чате</p>
+                                <div class="sum-chat">
+                                <h2><span class="chat-time">120</span></h2><span class="sign-hour">ч</span></div>
+                            </div>
+                        </div>
+                        <div class="info-card large"> <!-- 298px -->
+                            <div class="card-text">
+                                <p>Оплата за чат</p>
+                                <div class="chat-payment">
+                                <h2>1234</h2><span class="currency">₽</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1725 @@
+/* Общие стили */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    background-color: #F7F8FC;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+     /* Убирает горизонтальный скролл */
+    
+}
+
+
+/* График справа с отступом */
+.chart-container {
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    order: 1;
+    max-width: 554px;
+    height: 443px;
+
+}
+
+/* Контентная область (карточки) */
+.content {
+    flex: none;
+    max-width: 515px;
+    background-color: #F7F8FC;
+    
+    
+}
+
+.info-card.gradient h2 {
+    color: #113697;
+}
+
+.info-card.hours h2 {
+    color: #91BBC6;
+}
+
+.info-card.chat h2 {
+    color: #FF9100;
+}
+
+/* Заголовок */
+.header {
+    width: 100%;
+    max-width: 455px; /* Фиксируем ширину */
+    margin-bottom: 16px;
+    height: 40px; /* Отступ между заголовком и блоками */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to right, #113697, #4C6199);
+    padding: 20px 25px 20px 35px;
+    border-radius: 30px;
+    color: white;
+    background-color: transparent;
+}
+
+.period-label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.dropdown {
+    background: white;
+    position: relative;
+    border-radius: 30px;
+    padding: 10px 12px 10px 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 144px;
+    height: 30px;
+    justify-content: space-between;
+}
+
+#period {
+    font-size: 14px;
+    border: none;
+    background: none;
+    
+    outline: none;
+    color: #2E4A85;
+    font-weight: 500;
+    cursor: pointer;
+    appearance: none; /* Убираем стандартную стрелочку */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+}
+
+/* Стиль для SVG стрелки */
+.custom-arrow {
+    width: 20px; /* Размер иконки */
+    height: 20px;
+    pointer-events: none; /* Чтобы клик не срабатывал на иконке */
+    position: absolute;
+    right: 12px; /* Смещаем вправо */
+}
+
+/* Карточки */
+.stats {
+    width: 515px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    background-color: transparent;
+}
+
+
+
+.info-cards-ordinary {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-columns: 310px 148px; Две колонки */
+    gap: 16px;
+    max-width: 554px; /* Фиксированная ширина */
+    margin-top: 24px;
+}
+
+.info-cards-extra {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-columns: 310px 148px; Две колонки */
+    gap: 16px;
+    max-width: 554px; /* Фиксированная ширина */
+    margin-top: 16px;
+}
+
+
+
+.card {
+    height: 117px;
+    
+    border-radius: 30px;
+    background: white;
+    text-align: left;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card.total {
+    padding: 14px 35px 35px 35px;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    grid-column: span 2;
+    color: #2E4A85;
+}
+
+/* Иконка слева */
+.card-icon {
+    width: 70px; 
+    height: 70px;
+    margin-right: 25px;
+}
+
+/* Контейнер для текста */
+.card-content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0px;
+}
+
+/* Заголовок "Итого за год" */
+.card-title {
+    font-size: 18px;
+    font-weight: 400;
+    color: #000;
+}
+
+/* Подсвечиваем "год" */
+.card-title .highlight {
+    color: #4C6199; /* Цвет из макета */
+}
+
+/* Контейнер для суммы */
+.card-amount {
+    display: flex;
+    align-items: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: #E63950;
+}
+
+.card-amount-b {
+    display: flex;
+    align-items: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: #113697; /* Синий цвет */
+}
+
+.amount-b {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.ruble-icon-grey {
+    width: 20px; /* Размер значка ₽ */
+    height: auto;
+    margin-left: 4px; /* Отступ от числа */
+    opacity: 0.7; /* Делаем бледнее */
+}
+
+/* Число */
+.amount {
+    font-size: 45px;
+    font-weight: 700;
+}
+
+/* Иконка рубля */
+.ruble-icon {
+    width: 24px; /* Размер значка ₽ */
+    height: 39px;
+    margin-left: 4px; /* Отступ от числа */
+    opacity: 0.7; /* Делаем бледнее */
+}
+
+.card.green {
+    background: #43BB8F;
+    color: white;
+    padding: 25px 35px 30px 35px;
+    height: 74px;
+    
+}
+
+.card.green p {
+    margin: 0px 0px 5px 0px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.card.green h2 {
+    margin: 0px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+
+
+.card.gray {
+    background: #EAEAEA;
+    color: #43BB8F;
+    padding: 25px 35px 30px 35px;
+    height: 74px;
+}
+
+.card.gray p {
+    margin: 0px 0px 5px 0px;
+    color: #000;
+    font-size: 12px;
+    font-weight: 400;
+
+}
+
+.card.gray h2 {
+    margin: 0px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.card.bonus {
+    grid-column: span 2;
+    background: #F5F7FA;
+    color: #113697;
+        display: flex;
+        align-items: center;
+        gap: 20px; /* Отступ между иконкой и текстом */
+        border-radius: 30px;
+        background: white;
+        padding: 25px 35px 30px 30px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    p.card-title {
+        margin: 0px 0px 5px 0px;
+        color: #000;
+        font-size: 12px;
+        font-weight: 400;
+    
+    }
+    
+    span.amount-b {
+        margin: 0px;
+        font-size: 32px;
+        font-weight: 700;
+    }
+
+    .card-icon-bonus {
+        height: 50px;
+        width: 50px;
+    }
+
+    /* Стиль для текстового блока внутри карточки */
+.card-text {
+    display: flex;
+    flex-direction: column;
+}
+
+
+    .info-card {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 20px;
+        border-radius: 30px;
+        background: white;
+        text-align: left;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        gap: 20px; /* Расстояние между иконкой и текстом */
+    }
+
+    /* Карточка 350px */
+.info-card.wide {
+    width: 285px;
+    height: 59px;
+    padding: 25px 35px 30px 30px;
+}
+
+.info-card.wide.hours p {
+    margin: 0px 0px 5px 0px;
+    color: #000;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.info-card.wide.hours h2 {
+    margin: 0px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.info-card.wide.hw p {
+    margin: 0px 0px 5px 0px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.info-card.wide.hw h2 {
+    margin: 0px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+/* Карточка 188px */
+.info-card.small {
+    width: 118px;
+    height: 59px;
+    padding: 25px 35px 30px 35px;
+}
+
+.info-card.small p {
+    margin: 0px 0px 5px 0px;
+    color: #000;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.info-card.small.days h2 {
+    margin: 0px;
+    font-size: 32px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #113697, #4C6199);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.info-card.small.strikes h2 {
+    margin: 0px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+/* Карточка 240px */
+.info-card.medium {
+    width: 170px;
+    height: 59px;
+    padding: 25px 35px 30px 35px;
+}
+
+.info-card.medium p {
+    margin: 0px 0px 5px 0px;
+    color: #000;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.info-card.medium h2 {
+    margin: 0px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+div.sum-chat {
+    display: flex;
+}
+
+.sign-hour {
+    margin: 0px 0px 0px 5px;
+    font-size: 32px;
+    font-weight: 400;
+    color: rgba(255, 145, 0, 0.3);
+}
+
+/* Карточка 298px */
+.info-card.large {
+    width: 228px;
+    height: 59px;
+    padding: 25px 35px 30px 35px;
+}
+
+.info-card.large p {
+    margin: 0px 0px 5px 0px;
+    color: #000;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.info-card.large h2 {
+    margin: 0px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+div.chat-payment {
+    display: flex;
+}
+
+/* ДЗ к оплате (синяя карточка) */
+.info-card.highlight {
+    background: #007BFF;
+    color: white;
+}
+
+
+
+/* Заголовки */
+.info-card h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+/* Символ ₽ как изображение */
+
+
+.info-card img {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    
+}
+
+.info-card.highlight {
+    background: #1D97F0;
+    color: white;
+}
+
+/* График */
+.chart {
+    background: white;
+    
+    border-radius: 30px;
+    width: 554px;
+    height: 443px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.chart img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Стиль для символа рубля */
+
+
+span.currency {
+    font-size: 32px; /* Подгоняем размер */
+    color: rgba(206, 210, 227, 1); /* Делаем его бледнее */
+    font-weight: normal;
+    margin-left: 5px;
+}
+
+.currency-bonus {
+    font-size: 32px; /* Подгоняем размер */
+    color: rgba(206, 210, 227, 1); /* Делаем его бледнее */
+    font-weight: normal;
+    margin-left: 5px;
+}
+
+
+/* Стиль для буквы "ч" */
+.chat-time {
+    color: #FF9100; /* Оранжевый цвет */
+    font-weight: bold;
+}
+
+.info-card.large h2 {
+    color: #113697; /* Синий цвет */
+    font-weight: bold;
+}
+
+.currency-total  {
+    font-size: 45px; /* Подгоняем размер */
+    color: rgba(230, 57, 80, 0.3); /* Делаем его бледнее */
+    font-weight: normal;
+    margin-left: 5px;
+}
+
+
+/* Боковая панель */
+.sidebar {
+    width: 212px;
+    height: 100vh;
+    background: #fff;
+    color: rgba(60, 60, 60, 1);
+    padding: 55px 0px 0px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    position: fixed;
+    transition: width 0.3s ease-in-out; /* Плавное изменение ширины */
+    
+    
+}
+
+/* Свернутая панель */
+.sidebar.collapsed {
+    width: 104px;
+    padding: 0;
+}
+
+.profile {
+    text-align: left;
+    width: 100%;
+    padding: 0px 48px 42.5px 0px
+}
+
+/* Аватар */
+.avatar {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    
+}
+
+.sidebar.collapsed .avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    
+}
+
+/* Меню */
+nav ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    
+}
+
+
+nav ul li {
+    display: flex;
+    align-items: left;
+    margin: 20px 0;
+    gap: 15px;
+}
+
+nav ul li img {
+    width: 20px;
+    height: 20px;
+}
+
+nav ul li a {
+    color: rgba(60, 60, 60, 1);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Скрываем текст при сворачивании */
+.sidebar.collapsed .full-text {
+    display: none;
+}
+
+
+h3 {
+font-size: 16px;
+font-weight: 500;
+}
+
+.full-text {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.profile h3.full-text {
+    margin: 15px 0px 3px 0px;
+}
+
+.profile p.full-text {
+    margin: 0px 0px;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(95, 95, 95, 0.8)
+}
+
+.sidebar.collapsed .full-text {
+    opacity: 0;
+}
+
+.selected {
+color: #2D4A98
+}
+
+p.chat-id.full-text {
+    margin: 75px 0 0 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(95, 95, 95, 0.8);
+}
+
+.id {
+    font-size: 16px;
+    font-weight: 500;
+    color: #3C3C3C;
+}
+
+/* Кнопка сворачивания */
+.toggle-btn {
+    background: linear-gradient(to right, #113697, #4C6199);
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    left: 198px;
+    bottom: 50px;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10; /* Поверх сайдбара */
+}
+
+.sidebar.collapsed  .toggle-btn {
+    left: 30px; /* Подвигаем кнопку ближе к узкому сайдбару */
+    
+}
+
+.sidebar.collapsed .arrow-icon {
+    transform: rotate(180deg);
+}
+
+.chart-container {
+    width: 100%;
+
+}
+
+.arrow-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+
+
+.dashboard {
+    background-color: #F7F8FC;
+    display: flex;
+    width: 100vw; /* Заставляем занимать всю ширину экрана */
+    height: 100vh;
+    
+}
+
+/* Основное содержимое теперь занимает всю ширину */
+.main-content {
+    background-color: #F7F8FC;
+    display: flex;
+    flex-direction: row;
+    transition: margin-left 0.3s ease-in-out;
+    margin-left: 307px;
+    gap: 24px;
+    margin-top: 40px;
+    
+}
+
+
+.sidebar.collapsed + .main-content {
+    margin-left: 139px;
+ 
+
+}
+
+.sidebar.collapsed .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем */
+    margin-bottom: 174px; /* Добавляем расстояние до иконок */
+    width: 100%;
+    padding: 0px;
+}
+
+.sidebar.collapsed .avatar {
+    display: block;
+    margin: 30px 30px 0px 30px;
+}
+
+.sidebar.collapsed nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем иконки */
+    padding: 0;
+}
+
+.sidebar.collapsed nav ul li {
+    margin: 12.5px 0px;
+    display: flex;
+    justify-content: center; /* Центрируем иконки */
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Общие стили --- */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* --- Адаптивность для больших мониторов (1440px+) --- */
+
+
+/* @media (max-width: 1890px) {
+        .main-content {
+        transform: scale(1.0);
+        margin: 80px auto auto 380px;
+        }
+
+        .sidebar.collapsed + .main-content {
+            margin-left: 200px;
+        }
+    }
+
+        @media (max-width: 1760px) {
+            .main-content {
+                transform: scale(1.0);    
+            }
+        }
+
+
+            @media (max-width: 1651px) {
+                .main-content {
+                    transform: scale(1);
+                    margin: 80px auto auto 300px;    
+                }
+            }
+                @media (max-width: 1550px) {
+                    .main-content {
+                        transform: scale(1);    
+                    }
+                } */
+
+@media (min-width: 1440px) {
+                        .main-content {
+                            margin: 30px auto auto ;
+                            display: flex;
+                        justify-content: space-between;
+                        transform: scale(1);
+                        transform-origin: center;
+                        }
+                          
+    .sidebar.collapsed + .main-content {
+        margin: 30px auto auto;
+    }                  
+
+    .info-cards-ordinary, .info-cards-extra {
+        grid-template-columns: repeat(2, 1fr);
+        
+    }
+
+    .info-card {
+        padding: 50px;
+        font-size: 22px;
+    }
+
+    .chart-container {
+        width: 85%;
+        max-width: 750px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .main-content {
+        margin: 35px auto auto;
+        transform: scale(1.1);
+    }
+
+    .sidebar.collapsed + .main-content {
+        margin: 35px auto auto;
+    }
+}
+
+@media (max-width: 1920px) {
+    .main-content {
+        margin: 10px auto auto;
+        transform: scale(0.85);
+    }
+
+    .sidebar.collapsed + .main-content {
+        margin: 10px auto auto;
+    }
+}
+
+
+@media (max-width: 1800px) {
+    .main-content {
+        margin: 50px auto auto;
+        transform: scale(0.9);
+    }
+
+    .sidebar.collapsed + .main-content {
+        margin: 50px auto auto;
+        transform: scale(0.9);
+    }
+}
+
+@media (max-width: 1700px) {
+    .main-content {
+        margin: 50px auto auto 300px;
+        transform: scale(1.0);
+    }
+
+    .sidebar.collapsed + .main-content {
+        margin-top: 30px;
+    }
+
+    .sidebar.collapsed .profile {
+        display: flex
+    ;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 100px;
+        width: 100%;
+        padding: 0px;
+    }
+}
+
+/* --- Плавное уменьшение контента от 1400px → 768px (развернутый сайдбар) --- */
+@media (max-width: 1416px) {
+    .main-content {
+        max-width: calc(100% - 250px);
+        margin-left: 250px;
+        margin-top: -64px;
+        transform: scale(0.75);
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .info-cards-ordinary, .info-cards-extra {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .info-card {
+        padding: 18px;
+        font-size: 16px;
+    }
+
+    .chart-container {
+        width: 75%;
+        max-width: 500px;
+    }
+
+    .sidebar.collapsed + .main-content {
+        transform: scale(0.75);
+        margin-top: -63px;
+    }
+}
+
+@media (max-width: 1300px) {
+    .main-content {
+        max-width: calc(100% - 100px);
+        margin-left: 150px;
+        margin-top: 0px;
+        transform: scale(0.7);
+        transition: transform 0.2s ease-in-out;
+    }
+}
+
+/* --- Плавное уменьшение контента от 1240px → 768px (свернутый сайдбар) ---
+@media (max-width: 1240px) {
+    .main-content {
+        max-width: calc(100% - 260px);
+        margin-left: 160px;
+        transform: scale(calc(0.9 + (100vw - 768px) / 2400));
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .sidebar.collapsed + .main-content {
+        margin-left: 130px;
+    }
+
+    .info-card {
+        padding: 16px;
+        font-size: 14px;
+    }
+
+    .chart-container {
+        width: 70%;
+        max-width: 450px;
+    }
+} */
+
+
+@media (max-width: 1200px) {
+    .main-content {
+        max-width: calc(100% - 40px);
+        margin-left: 200px;
+        margin-top: -20px;
+        transform: scale(0.9);
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .sidebar.collapsed + .main-content {
+        margin-left: 80px;
+        margin-top: -59px;
+        transform: scale(0.7);
+    }
+}
+
+@media (max-width: 1070px) {
+    .sidebar {
+        position: absolute;
+        z-index: 1000;
+    }
+
+    .sidebar.collapsed {
+        width: 80px;
+    }
+
+    /* Кнопка сайдбара под основным меню */
+    .sidebar .toggle-btn {
+        position: absolute;
+        top: 500px;
+        left: 50%;
+        transform: translateX(-30%);
+        width: 45px;
+        height: 45px;
+        z-index: 1001;
+    }
+
+    .sidebar.collapsed .toggle-btn {
+        top: 110px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .main-content {
+        width: 100%;
+        margin-left: 260px;
+        transition: margin-left 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 10px;
+        overflow-x: hidden;
+        transform: scale(calc(0.85 + (100vw - 340px) / 4280));
+        transition: transform 0.2s ease-in-out;
+    }
+
+    
+
+    .sidebar.collapsed + .main-content {
+        margin-left: 100px;
+        margin-top: 15px;
+        transform: scale(1.0);
+        max-width: calc(100% - 80px);
+        }
+
+        div.stats {
+            width: 100%;
+        }
+    
+        .header {
+            width: 100%;
+        }
+
+    /* График и карточки под ним одной ширины */
+    .chart-container {
+        width: 100%;
+        max-width: 515px;
+        margin: 0 auto;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .chart {
+        width: 100%;
+        height: 100%;
+    }
+    
+
+    /* Все карточки одной ширины */
+    .info-card {
+        width: 100%;
+        padding: 10px;
+        font-size: 12px;
+        text-align: left;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .card.total {
+        width: 445px;
+    }
+
+    .info-card.wide {
+        width: 246px;
+    }
+
+    .info-card.large {
+        width: 189px;
+        height: 55px;
+    }
+
+    .info-card.medium {
+        height: 55px;
+    }
+    .info-cards-extra, .info-cards-ordinary {
+        width: 100%;
+    }
+
+}
+
+
+
+@media (max-width: 850px) {
+    .sidebar {
+        width: 180px;
+        position: absolute;
+        z-index: 1000;
+    }
+
+    .sidebar.collapsed {
+        width: 80px;
+    }
+
+    /* Кнопка сайдбара под основным меню */
+    .sidebar .toggle-btn {
+        position: absolute;
+        top: 500px;
+        left: 70%;
+        transform: translateX(-30%);
+        width: 45px;
+        height: 45px;
+        z-index: 1001;
+    }
+
+    .sidebar.collapsed .toggle-btn {
+        top: 110px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .main-content {
+        width: 100%;
+        margin-left: 200px;
+        transition: margin-left 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 10px;
+        overflow-x: hidden;
+        transform: scale(calc(0.85 + (100vw - 340px) / 4280));
+        transition: transform 0.2s ease-in-out;
+    }
+
+    div.stats {
+        width: 100%;
+    }
+
+    .header {
+        width: 100%;
+    }
+
+    .sidebar.collapsed + .main-content {
+        margin-left: 100px;
+        max-width: calc(100% - 80px);
+    }
+
+    /* График и карточки под ним одной ширины */
+    .chart-container {
+        width: 100%;
+        max-width: 515px;
+        margin: 0 auto;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .chart {
+        width: 100%;
+        height: 100%;
+    }
+    
+
+    /* Все карточки одной ширины */
+    .info-card {
+        width: 100%;
+        padding: 10px;
+        font-size: 12px;
+        text-align: left;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .card.total {
+        width: 445px;
+    }
+
+    .info-card.wide {
+        width: 246px;
+    }
+
+    .info-card.large {
+        width: 189px;
+        height: 55px;
+    }
+
+    .info-card.medium {
+        height: 55px;
+    }
+    .info-cards-extra, .info-cards-ordinary {
+        width: 100%;
+    }
+
+}
+
+/* --- Адаптивность для экранов 340px - 768px --- */
+@media (max-width: 768px) and (min-width: 340px) {
+    .sidebar {
+        width: 150px;
+        transition: width 0.3s ease-in-out;
+        position: absolute;
+        z-index: 1000;
+        padding: 30px;
+    }
+
+    .sidebar.collapsed {
+        width: 60px;
+    }
+
+    /* Кнопка сайдбара под основным меню */
+    .sidebar .toggle-btn {
+        position: absolute;
+        top: 500px;
+        transform: translateX(-30%);
+        width: 45px;
+        height: 45px;
+        z-index: 1001;
+    }
+
+    button.toggle-btn {
+        left: 149px;
+        margin-left: -60px;
+        
+    }
+
+    .sidebar.collapsed .toggle-btn {
+        top: 100px;
+        width: 50px;
+        height: 50px;
+        left: 65px;
+        transform: scale(0.8);
+        margin-left: -25px;
+    }
+
+    .main-content {
+        width: 100%;
+        margin-left: 200px;
+        transition: margin-left 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 10px;
+        overflow-x: hidden;
+        transform: scale(calc(0.85 + (100vw - 340px) / 4280));
+        transition: transform 0.2s ease-in-out;
+    }
+
+    
+
+    div.stats {
+        width: 100%;
+    }
+
+    .header {
+        width: 100%;
+    }
+
+    .sidebar.collapsed + .main-content {
+        margin-left: 70px;
+        max-width: calc(100% - 80px);
+    }
+
+    /* График и карточки под ним одной ширины */
+    .chart-container {
+        width: 100%;
+        max-width: 515px;
+        margin: 0 auto;
+        transform: scale(calc(0.9 + (100vw - 340px) / 4280));
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .chart {
+        width: 100%;
+        height: 100%;
+        max-height: 330px;
+    }
+
+    /* Все карточки одной ширины */
+    .info-card {
+        width: 95%;
+        max-width: 350px;
+        padding: 10px;
+        font-size: 12px;
+        text-align: left;
+        transform: scale(calc(0.9 + (100vw - 340px) / 4280));
+        transition: transform 0.2s ease-in-out;
+    }
+}
+
+
+
+/* --- Адаптивность для мобильных (до 340px) --- */
+@media (max-width: 340px) {
+    .sidebar {
+        width: 120px;
+        transition: width 0.3s ease-in-out;
+    }
+
+    .sidebar.collapsed {
+        width: 50px;
+    }
+
+    .main-content {
+        margin-left: 120px;
+        max-width: calc(100% - 120px);
+        padding: 5px;
+        transform: scale(calc(0.75 + (100vw - 320px) / 400));
+        transition: all 0.3s ease-in-out;
+    }
+
+    .sidebar.collapsed + .main-content {
+        margin-left: 50px; /* Исправляем, чтобы контент двигался ближе */
+        max-width: calc(100% - 50px);
+        padding: 0;
+    }
+
+    /* Фикс полоски - убираем ненужный overflow */
+    .dashboard {
+        overflow-x: hidden;
+    }
+
+    /* Контейнер карточек адаптируем */
+    .info-cards-ordinary, .info-cards-extra {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 280px;
+        gap: 5px;
+    }
+
+    /* График центрируем и убираем смещение */
+    .chart-container {
+        order: 2;
+        width: 100%;
+        max-width: 260px;
+        margin-left: auto;
+        margin-right: auto;
+        transform: scale(calc(0.75 + (100vw - 320px) / 400));
+        transition: transform 0.2s ease-in-out;
+    }
+
+    /* Карточки уменьшаются и центрируются */
+    .info-card {
+        width: 90%;
+        max-width: 260px;
+        padding: 8px;
+        font-size: 10px;
+        transform: scale(calc(0.75 + (100vw - 320px) / 400));
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .sidebar.collapsed .toggle-btn {
+        left: 60px;
+    }
+}
+
+
+
+@media (max-width: 685px) {
+    .main-content {
+        margin-left: 160px;
+        max-width: 450px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sidebar.collapsed + .main-content {
+        margin-left: 70px;
+        max-width: calc(100% - 70px);
+    }
+
+    /* Хедер тоже становится в колонку */
+    .header {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: 405px;
+        text-align: center;
+        transform: translateX(-35px);
+        transform: scale(calc(0.85 + (100vw - 340px) / 4000));
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .dropdown {
+        width: 100%;
+        height: 40%;
+    }
+
+    /* Все карточки выстраиваются в колонку */
+    .stats, .info-cards, .info-cards-extra, .info-cards-ordinary {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 100%;
+        gap: 8px;
+    }
+
+    .card-icon {
+        width: calc(50px - (100vw - 340px) / 30);
+        height: calc(50px - (100vw - 340px) / 30);
+        transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+    }
+
+    /* Все карточки одного размера и равномерно уменьшаются */
+    .info-card, .stats .card {
+        width: 100%;
+        max-width: 450px;
+        text-align: center;
+        transform: scale(calc(0.85 + (100vw - 340px) / 4000));
+        transition: transform 0.2s ease-in-out;
+    }
+
+    /* График тоже уменьшается и центрируется */
+    .chart-container {
+        width: 100%;
+        max-width: 470px;
+        margin: 0 auto;
+        transform: scale(calc(0.85 + (100vw - 340px) / 4000));
+        transition: transform 0.2s ease-in-out;
+    }
+
+    /* Постепенное уменьшение текста в карточках */
+    .info-card h2, .stats .card h2 {
+        font-size: calc(18px - (100vw - 8000px) / 1000);
+        transition: font-size 0.2s ease-in-out;
+    }
+
+    .info-card p, .stats .card p {
+        font-size: calc(14px - (100vw - 4000px) / 1200);
+        transition: font-size 0.2s ease-in-out;
+    }
+
+    /* Уменьшение изображений внутри карточек */
+    .info-card img, .stats .card img {
+        width: calc(100px - (100vw - 340px) / 20);
+        height: auto;
+        transition: width 0.2s ease-in-out;
+    }
+
+    .amount, .amount-b {
+        font-size: calc(32px - (100vw - 4000px) / 1200);
+    }
+
+     .currency-bonus {
+        transform: scale(calc(0.85 + (100vw - 340px) / 4000));
+    }
+
+    .currency-total{
+        font-size: calc(32px - (100vw - 4000px) / 1200);
+    }
+
+    .card.green, .card.gray, .card.bonus, .card.total {
+        max-width: 410px;
+    }
+
+    .chart img{
+        width: 470px;
+    }
+
+    .info-card.wide {
+        width: 405px;
+    }
+
+    .info-card.small {
+        width: 400px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .info-card.medium {
+        width: 400px;
+    }
+
+    .info-card.large {
+        width: 400px;
+    }
+
+    .info-cards {
+        gap: 8px;
+        margin-top: 8px;
+    }
+
+    .info-card {
+        text-align: center;
+        align-items: center;
+    }
+
+    }
+
+    @media (max-width: 562px) {
+        /* Основной контент центрируется и адаптируется */
+        .main-content {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            gap: 8px;
+        }
+    
+        /* Хедер адаптируется и центрируется */
+        .header {
+            transform: translateX(-20px);
+            max-width: 320px;
+            text-align: center;
+            padding: 10px;
+            transform: scale(calc(0.9 + (100vw - 340px) / 3000));
+            transition: transform 0.2s ease-in-out;
+        }
+    
+        /* Дропдаун в хедере уменьшается пропорционально */
+        .dropdown {
+            width: 100%;
+            max-width: 120px;
+            transform: scale(calc(0.9 + (100vw - 340px) / 3000));
+            transition: transform 0.2s ease-in-out;
+        }
+    
+        /* Все карточки центрируются и равномерно уменьшаются */
+        .stats, .info-cards, .info-cards-extra, .info-cards-ordinary {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: calc(100% - 20px);
+            gap: 8px;
+        }
+    
+        /* Карточки одного размера, равномерное уменьшение */
+        .info-card, .stats .card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: calc(100% - 20px);
+            gap: 8px;
+        }
+
+        .info-cards {
+            transform: translateY(300px);
+        }
+    
+        /* График центрируется и не наезжает */
+        .chart-container {
+            width: 100%;
+            max-width: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px auto;
+            padding: 10px;
+            
+            border-radius: 8px;
+            transform: scale(calc(0.9 + (100vw - 340px) / 3000));
+            transition: transform 0.2s ease-in-out;
+        }
+    
+        .chart {
+            transform: translateY(300px);
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        
+    
+        /* Запрещаем перенос текста в важных карточках */
+        .info-card h2, .stats .card h2 {
+            font-size: calc(25px - (100vw - 340px) / 60);
+            white-space: nowrap;
+        }
+    
+        .info-card p, .stats .card p {
+            font-size: calc(20px - (100vw - 340px) / 80);
+            text-align: center;
+        }
+    
+        /* Уменьшение изображений внутри карточек */
+        .info-card img, .stats .card img {
+            width: calc(40px - (100vw - 340px) / 40);
+            height: auto;
+            margin-top: 10px;
+            transition: width 0.2s ease-in-out;
+        }
+    
+        
+    
+        
+    }
+
+    @media (max-width: 456px) {
+    .card.total, .header, .card.gray, .card.green, .card.bonus, .chart-container {
+        transform: scale(0.9);
+    }
+
+    .stats {
+        gap: 0px;
+    }
+
+    .info-cards {
+        margin: 0px;
+        gap: 0px;
+    }
+
+    .header {
+        transform: translateX(-10px);
+    }
+
+}
+
+    @media (max-width: 426px) {
+        .sidebar.collapsed + .main-content {
+            transform: scale(0.9);
+            margin-top: -35px;
+        }
+
+        
+
+    }
+
+    @media (max-width: 390px) {
+        /* Скрытый сайдбар */
+        .sidebar.collapsed {
+            width: 50px;
+        }
+    
+        /* Основной контент сдвигается ближе */
+        .sidebar.collapsed + .main-content {
+            margin-left: 35px; /* Вместо 70px */
+            max-width: calc(100%); /* Учитываем ширину сайдбара */
+            transform: scale(0.9);
+            transition: all 0.3s ease-in-out;
+            margin-top: -30px;
+        }
+    
+        /* Полностью убираем горизонтальный скролл */
+        .dashboard {
+            overflow-x: hidden;
+            width: 100%;
+        }
+    
+        /* Хедер центрируется и адаптируется */
+        .header {
+            width: 100%;
+            max-width: 280px; /* Чтобы не выходил за границы */
+            text-align: center;
+            transform: scale(calc(0.85 + (100vw - 340px) / 3000));
+            transition: transform 0.2s ease-in-out;
+        }
+    
+        /* Дропдаун в хедере тоже уменьшается */
+        .dropdown {
+            max-width: 110px;
+        }
+    
+        /* Карточки центрируем и уменьшаем */
+        .stats, .info-cards, .info-cards-extra, .info-cards-ordinary {
+            width: 100%;
+            max-width: 280px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+    
+        /* График центрируется и больше не выезжает */
+        .chart-container {
+            width: 100%;
+            max-width: 290px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px auto;
+            padding: 5px;
+            transform: scale(calc(0.85 + (100vw - 340px) / 3000));
+            transition: transform 0.2s ease-in-out;
+        }
+    
+        /* График тоже адаптируем */
+        .chart {
+            width: 100%;
+            max-width: 270px;
+            height: auto;
+        }
+    
+        /* Исправляем перекрытие основного контента */
+        .main-content {
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+        }
+    
+        /* Карточки адаптируются */
+        .info-card, .stats .card {
+            width: 100%;
+            max-width: 290px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+    .sidebar.collapsed .toggle-btn {
+        transform: scale(0.8);
+        left: 60px;
+        margin-left: -29px;
+    }
+
+}
+    
+    
+    
+
+
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
